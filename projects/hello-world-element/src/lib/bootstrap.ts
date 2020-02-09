@@ -3,9 +3,11 @@ import { platformBrowser } from '@angular/platform-browser';
 
 import { HelloWorldModule } from './hello-world.module';
 
-export function bootstrapHelloWorld() {
-  enableProdMode();
+export function bootstrapHelloWorld(createPlatform = () => platformBrowser()) {
+  try {
+    enableProdMode();
+  } catch {}
     
-  platformBrowser().bootstrapModule(HelloWorldModule, { ngZone: 'noop' })
+  return createPlatform().bootstrapModule(HelloWorldModule, { ngZone: 'noop' })
     .catch(err => console.error(err));
 }
