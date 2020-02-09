@@ -84,6 +84,7 @@
             "polyfills": "projects/elements-app/src/polyfills.ts",
             "tsConfig": "projects/elements-app/tsconfig.app.json",
             "aot": true,
+            "es5BrowserSupport": false,
             "assets": [
               "projects/elements-app/src/favicon.ico",
               "projects/elements-app/src/assets"
