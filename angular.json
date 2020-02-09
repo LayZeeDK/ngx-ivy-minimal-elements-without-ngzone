@@ -76,22 +76,16 @@
       "prefix": "demo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/elements-app",
             "index": "projects/elements-app/src/index.html",
             "main": "projects/elements-app/src/main.ts",
-            "polyfills": "projects/elements-app/src/polyfills.ts",
+            "polyfills": "",
             "tsConfig": "projects/elements-app/tsconfig.app.json",
             "aot": true,
-            "es5BrowserSupport": false,
-            "assets": [
-              "projects/elements-app/src/favicon.ico",
-              "projects/elements-app/src/assets"
-            ],
-            "styles": [
-              "projects/elements-app/src/styles.css"
-            ],
+            "assets": [],
+            "styles": [],
             "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
@@ -107,13 +101,20 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "commonChunk": false,
+              "singleBundle": true,
+              "es5BrowserSupport": false,
+              "tsConfig": "projects/elements-app/tsconfig.app.prod.json",
+              "index": "",
+              "main": "projects/elements-app/src/main.prod.ts",
+              "scripts": [],
               "budgets": [
                 {
                   "type": "initial",
@@ -148,5 +149,5 @@
         }
       }
     }},
-  "defaultProject": "hello-world-element"
+  "defaultProject": "elements-app"
 }
